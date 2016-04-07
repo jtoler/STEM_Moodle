@@ -32,6 +32,7 @@ $surl = new moodle_url('/course/search.php');
         </div>
       </div>
     </div>
+  <?php if(isloggedin()): ?>
     <div class="header-main-menubar">
       <div class="navbar">
         <div class="navbar-inner">
@@ -57,6 +58,7 @@ $surl = new moodle_url('/course/search.php');
         </div>
       </div>
     </div>
+  <?php endif; ?>
   </div>
   
 </header>

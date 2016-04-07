@@ -73,11 +73,17 @@ echo $OUTPUT->doctype() ?>
 <!--Custom theme Who We Are block-->
 <div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
-        <?php echo $html->heading; ?>
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
+        <?php
+        if (isloggedin()) {
+            echo $html->heading;
+
+            echo '
+            <div id="page-navbar" class="clearfix">
+                <nav class="breadcrumb-nav">' . $OUTPUT->navbar() . '</nav>
+                <div class="breadcrumb-button">' . $OUTPUT->page_heading_button() . '</div>
+            </div>';
+        }
+        ?>
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>
@@ -85,14 +91,12 @@ echo $OUTPUT->doctype() ?>
     <div id="page-content" class="row-fluid">
 
         <div id="<?php echo $regionbsid ?>" class="span9">
-					<?php
-					 echo $courserenderer->new_courses();
-						echo $OUTPUT->course_content_header();
-						echo $OUTPUT->main_content();
-						echo $OUTPUT->course_content_footer();
-          ?>
+            <?php
+                echo $OUTPUT->course_content_header();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+            ?>
         </div>
-				<?php echo $OUTPUT->blocks('side-pre', 'span3'); ?>
 
     </div>
 </div>
