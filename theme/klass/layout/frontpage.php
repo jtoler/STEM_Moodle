@@ -46,31 +46,36 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php  require_once(dirname(__FILE__) . '/includes/header.php');  ?>
-<!--Custom theme header-->
-<div class="container-fluid">
-	 <?php
-        $toggleslideshow = theme_klass_get_setting('toggleslideshow');
-        if ($toggleslideshow == 1) {
-            require_once(dirname(__FILE__) . '/includes/slideshow.php');
-        } 
-      ?>
-</div>
-<!--Custom theme slider-->
-<div class="fp-site-customdesc">
-	<div class="container-fluid">
-    
-    <?php
-	$who_title = theme_klass_get_setting('whoweare_title');
-    $who_desc = theme_klass_get_setting('whoweare_description');
-?>
-  	<h2><?php echo $who_title; ?></h2>
-   <?php if ($who_desc){ ?>
-      	<p><?php echo $who_desc; ?></p>
-        <?php } ?>
-  </div>
-</div>
-<!--Custom theme Who We Are block-->
+<?php  require_once(dirname(__FILE__) . '/includes/header.php'); ?>
+ <?php if(!isloggedin()):?>
+    <!--Custom theme header-->
+     <div class="container-fluid">
+     <?php
+         $toggleslideshow = theme_klass_get_setting('toggleslideshow');
+         if ($toggleslideshow == 1) {
+             require_once(dirname(__FILE__) . '/includes/slideshow.php');
+         }
+     ?>
+     </div>
+
+
+    <!--Custom theme who we are-->
+    <div class="fp-site-customdesc">
+        <div class="container-fluid">
+
+        <?php
+        $who_title = theme_klass_get_setting('whoweare_title');
+        $who_desc = theme_klass_get_setting('whoweare_description');
+    ?>
+        <h2><?php echo $who_title; ?></h2>
+       <?php if ($who_desc){ ?>
+            <p><?php echo $who_desc; ?></p>
+            <?php } ?>
+      </div>
+    </div>
+ <?php endif; ?>
+
+
 <div id="page" class="container-fluid">
     <header id="page-header" class="clearfix">
         <?php
