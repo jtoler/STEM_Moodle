@@ -1,3 +1,5 @@
 /* Custom CSS Settings
 -------------------------*/
-[[setting:customcss]]
+.block_navigation{
+    display: none !important;
+}

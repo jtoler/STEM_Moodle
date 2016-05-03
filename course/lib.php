@@ -45,8 +45,8 @@ define('COURSE_MAX_USERS_PER_DROPDOWN', 1000);
 define('FRONTPAGENEWS', '0');
 define('FRONTPAGECATEGORYNAMES', '2');
 define('FRONTPAGECATEGORYCOMBO', '4');
-define('FRONTPAGEENROLLEDCOURSELIST', '0');
-define('FRONTPAGEALLCOURSELIST', '0');
+define('FRONTPAGEENROLLEDCOURSELIST', '5');
+define('FRONTPAGEALLCOURSELIST', '6');
 define('FRONTPAGECOURSESEARCH', '7');
 // Important! Replaced with $CFG->frontpagecourselimit - maximum number of courses displayed on the frontpage.
 define('EXCELROWS', 65535);
