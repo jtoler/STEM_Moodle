@@ -47,7 +47,7 @@ $surl = new moodle_url('/course/search.php');
             <div class="nav-collapse collapse navbar-responsive-collapse">
               <p class="navbar-text"><a href="<?php echo $CFG->wwwroot;?>"><i class="fa fa-home"></i>Home</a></p>
               <p class="navbar-text"><a href="<?php echo $CFG->wwwroot;?>/custom_pages/mycourses.php"><i class="fa fa-home"></i>My Courses</a></p>
-              <p class="navbar-text"><a href="<?php echo $CFG->wwwroot;?>/course"><i class="fa fa-home"></i>My Grades</a></p>
+              <p class="navbar-text"><a href="<?php echo $CFG->wwwroot;?>/grade/report/overview/index.php"><i class="fa fa-home"></i>My Grades</a></p>
               <?php echo $OUTPUT->custom_menu(); ?>
               <ul class="nav pull-right">
                   <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
